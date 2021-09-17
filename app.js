@@ -11,7 +11,7 @@ const app = ex()
 app.use(bodyParser.urlencoded({ extended: false }))
 
 // router is a valid middleware
-app.use(adminRoutes)
+app.use('/admin', adminRoutes)
 app.use(shopRoutes)
 
 // 404 page
