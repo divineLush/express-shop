@@ -10,6 +10,7 @@ body {
 a {
     display: inline-block;
     color: #e9b189;
+    margin: .5rem;
 }
 
 nav a:not(:last-child) {
@@ -22,5 +23,17 @@ a:focus {
 }
 
 main {
-    padding: 2rem 0;
+    padding: 2rem .5rem;
+}
+
+button,
+input {
+    padding: .5rem 1rem;
+    margin: .5rem;
+    font-size: 1.2rem;
+    font-family: 'Inconsolata', monospace;
+    background: #c6c8d1;
+    color: #161821;
+    border: 0;
+    border: 4px #84a0c6 solid;
 }

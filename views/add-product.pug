@@ -1,0 +1,16 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title shop
+        link(rel="stylesheet" href="/css/main.css")
+    body
+        header
+            nav
+                a(href="/") shop
+                a(href="/admin/add-product") add product
+        main
+            form(action="/admin/add-product" method="POST")
+                input(type="text" name="title")
+                button(type="submit") add product
