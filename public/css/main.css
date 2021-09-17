@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    padding: 1rem;
+    font-size: 2rem;
+    font-family: 'Inconsolata', monospace;
+    background: #161821;
+    color: #c6c8d1;
+}
+
+a {
+    display: inline-block;
+    color: #e9b189;
+}
+
+nav a:not(:last-child) {
+    padding-right: 3rem;
+}
+
+a:hover,
+a:focus {
+    color: #89b8c2;
+}
+
+main {
+    padding: 2rem 0;
+}
