@@ -17,13 +17,13 @@ nav a:not(:last-child) {
     padding-right: 3rem;
 }
 
+li:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
 a:hover,
 a:focus {
     color: #89b8c2;
-}
-
-main {
-    padding: 2rem .5rem;
 }
 
 button,

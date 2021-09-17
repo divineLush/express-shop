@@ -13,7 +13,10 @@ router.get('/', (req, res, next) => {
     // res.sendFile(path.join(__dirname, '..', 'views', 'shop.html'))
 
     // pass data to template
-    res.render('shop', { products: adminData.products })
+    res.render('shop', {
+        title: 'shop',
+        products: adminData.products
+    })
 })
 
 module.exports = router

@@ -1,22 +1,11 @@
-doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        title shop
-        link(rel="stylesheet" href="/css/main.css")
-        link(rel="stylesheet" href="/css/shop.css")
-    body
-        header
-            nav
-                a(href="/") shop
-                a(href="/admin/add-product") add product
-        main
-            if products.length > 0
-                h1 my products
-                ul.products
-                    each product in products
-                        li.products__item
-                            span #{product.title}
-            else
-                h1 no products
+extends layouts/base.pug
+
+block content
+    if products.length > 0
+        h1 my products
+        ul.products
+            each product in products
+                li.products__item
+                    span #{product.title}
+    else
+        h1 no products
