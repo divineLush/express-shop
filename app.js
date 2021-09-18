@@ -4,8 +4,9 @@ const path = require('path')
 const ex = require('express')
 const bodyParser = require('body-parser')
 
-const adminData = require('./routes/admin')
+const adminRoutes = require('./routes/admin')
 const shopRoutes = require('./routes/shop')
+const error = require('./controllers/error')
 
 const app = ex()
 
@@ -20,15 +21,11 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(ex.static(path.join(__dirname, 'public')))
 
 // router is a valid middleware
-app.use('/admin', adminData.routes)
+app.use('/admin', adminRoutes)
 app.use(shopRoutes)
 
-// 404 page
-app.use((req, res, next) => {
-    // const file = path.join(__dirname, 'views', '404.html')
-    // res.status(404).sendFile(file)
-    res.status(404).render('404')
-})
+// notfound page
+app.use(error.getNotFound)
 
 const server = http.createServer(app)
 server.listen(3000)
