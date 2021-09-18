@@ -17,11 +17,11 @@ exports.getProducts = (req, res, next) => {
     // path.join() will build a path that works both on linux & windows
     // res.sendFile(path.join(__dirname, '..', 'views', 'shop.html'))
 
-    const products = Product.fetchAll()
-
-    // pass data to template
-    res.render('shop', {
-        products,
-        title: 'shop',
+    Product.fetchAll((products) => {
+        // pass data to template
+        res.render('shop', {
+            products,
+            title: 'shop',
+        })
     })
 }
