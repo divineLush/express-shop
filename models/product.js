@@ -7,8 +7,10 @@ const productsPath = (() => {
 })()
 
 class Product {
-    constructor(title) {
+    constructor(title, desc, price) {
         this.title = title
+        this.desc = desc
+        this.price = price
     }
 
     save() {

@@ -1,0 +1,14 @@
+extends ../layouts/base.pug
+
+block content
+    form(action="/admin/add-product" method="POST")
+        .mb-1
+            label(for="title") Title
+            input(type="text" id="title" name="title")
+        .mb-1
+            label(for="desc") Description
+            input(type="text" id="desc" name="desc")
+        .mb-2
+            label(for="price") Price
+            input(type="number" id="price" name="price")
+        button(type="submit") add product
