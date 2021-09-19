@@ -1,5 +1,6 @@
 const fs = require('fs')
 const path = require('path')
+const { v4: uuidv4 } = require('uuid')
 
 const productsPath = (() => {
     const root = path.dirname(process.mainModule.filename)
@@ -11,6 +12,7 @@ class Product {
         this.title = title
         this.desc = desc
         this.price = price
+        this.id = uuidv4()
     }
 
     save() {
@@ -28,8 +30,13 @@ class Product {
 
     static fetchAll(cb) {
         fs.readFile(productsPath, (err, fileBuff) => {
-            const products = err ? [] : JSON.parse(fileBuff)
-            cb(products)
+            cb(err ? [] : JSON.parse(fileBuff))
+        })
+    }
+
+    static findByID(id, cb) {
+        Product.fetchAll((products) => {
+            cb(products.find(el => el.id === id))
         })
     }
 }

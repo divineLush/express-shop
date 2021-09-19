@@ -15,6 +15,13 @@ exports.getProducts = (req, res, next) => {
     })
 }
 
+exports.getSingleProduct = (req, res, next) => {
+    const id = req.params.id
+    Product.findByID(id, (product) => {
+        res.render('shop/product-detail', { title: product.title, product })
+    })
+}
+
 exports.getIndex = (req, res, next) => {
     res.render('shop/index', { title: 'home' })
 }

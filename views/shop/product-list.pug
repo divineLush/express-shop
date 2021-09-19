@@ -6,7 +6,9 @@ block content
         ul
             each product in products
                 li
-                    span #{product.title} #{product.price}$
-                    p #{product.desc}
+                    a.mb-1(href=`/products/${product.id}`)
+                        | #{product.title} #{product.price}$
+                    form(action="/add-to-cart" method="POST")
+                        button add to cart
     else
         h1 no products
