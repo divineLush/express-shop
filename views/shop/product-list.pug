@@ -7,8 +7,9 @@ block content
             each product in products
                 li
                     a.mb-1(href=`/products/${product.id}`)
-                        | #{product.title} #{product.price}$
-                    form(action="/add-to-cart" method="POST")
-                        button add to cart
+                        | #{product.title}
+                    span  #{product.price}$
+                    form(action=`/cart/add/${product.id}` method="POST")
+                        button(type="submit") add to cart
     else
         h1 no products

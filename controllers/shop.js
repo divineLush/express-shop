@@ -30,6 +30,11 @@ exports.getCart = (req, res, next) => {
     res.render('shop/cart', { title: 'cart' })
 }
 
+exports.postAddToCart = (req, res, next) => {
+    const id = req.params.id
+    res.redirect('/cart')
+}
+
 exports.getCheckout = (req, res, next) => {
     res.render('shop/checkout', { title: 'checkout' })
 }

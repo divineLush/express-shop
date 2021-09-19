@@ -42,11 +42,22 @@ input {
     background: #c6c8d1;
     color: #161821;
     border: 0;
-    border: 4px #84a0c6 solid;
+    border: 2px #84a0c6 solid;
 }
 
 button {
     cursor: pointer;
+    transition: transform .3s ease;
+}
+
+button:hover {
+    box-shadow: .4rem .4rem #ada0d3;
+    transform: translateX(-.4rem) translateY(-.4rem) scale(1.03);
+}
+
+button:active {
+    box-shadow: .2rem .2rem #ada0d3;
+    transform: translateX(-.1rem) translateY(-.1rem) scale(.9);
 }
 
 /* hide spinners */

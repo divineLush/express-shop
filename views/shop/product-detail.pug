@@ -1,7 +1,8 @@
 extends ../layouts/base.pug
 
 block content
-    h1 #{product.title} #{product.price}$
+    h1 #{product.title}
+    span  #{product.price}$
     p #{product.desc}
-    form(action="/add-to-cart" method="POST")
-        button add to cart
+    form(action=`/cart/add/${product.id}` method="POST")
+        button(type="submit") add to cart

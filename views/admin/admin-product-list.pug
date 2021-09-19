@@ -6,7 +6,8 @@ block content
         ul
             each product in products
                 li
-                    span #{product.title} #{product.price}$
+                    span #{product.title}
+                    span  #{product.price}$
                     p #{product.desc}
                     button.d-ib.mr-1 delete
                     button.d-ib edit
