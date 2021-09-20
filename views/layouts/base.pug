@@ -6,13 +6,13 @@ html(lang="en")
         title #{title}
         link(rel="stylesheet" href="/css/main.css")
     body
-        header
+        header.p-1-2
             nav
-                a(href="/") home
-                a(href="/products") shop
-                a(href="/cart") cart
-                a(href="/orders") orders
-                a(href="/admin/add-product") add product
-                a(href="/admin/products") admin products
-        main
+                a.header-link(href="/") home
+                a.header-link(href="/products") shop
+                a.header-link(href="/cart") cart
+                a.header-link(href="/orders") orders
+                a.header-link(href="/admin/add-product") add product
+                a.header-link(href="/admin/products") admin products
+        main.p-1-2
             block content
