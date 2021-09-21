@@ -1,4 +1,8 @@
+const fs = require('fs')
+
 const Product = require('../models/product')
+const Cart = require('../models/cart')
+const { cartPath } = require('../utils/paths')
 
 exports.getProducts = (req, res, next) => {
     // __dirname holds an absolute path on OS to this project folder
@@ -27,12 +31,17 @@ exports.getIndex = (req, res, next) => {
 }
 
 exports.getCart = (req, res, next) => {
-    res.render('shop/cart', { title: 'cart' })
+    fs.readFile(cartPath, (err, cartBuff) => {
+        const { products, total } = err
+            ? { products: [], total: 0 } : JSON.parse(cartBuff)
+
+        res.render('shop/cart', { title: 'cart', products, total })
+    })
 }
 
 exports.postAddToCart = (req, res, next) => {
     const id = req.params.id
-    res.redirect('/cart')
+    Cart.addProduct(id, () => { res.redirect('/cart') })
 }
 
 exports.getCheckout = (req, res, next) => {

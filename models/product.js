@@ -1,11 +1,7 @@
 const fs = require('fs')
-const path = require('path')
 const { v4: uuidv4 } = require('uuid')
 
-const productsPath = (() => {
-    const root = path.dirname(process.mainModule.filename)
-    return path.join(root, 'data', 'products.json')
-})()
+const { productsPath } = require('../utils/paths')
 
 class Product {
     constructor(title, desc, price) {

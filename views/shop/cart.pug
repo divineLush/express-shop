@@ -1,4 +1,15 @@
 extends ../layouts/base.pug
 
 block content
-    h1 this is cart
+    if products.length > 0
+        ul
+            each product in products
+                li
+                    a.mb-1(href=`/products/${product.id}`)
+                        | #{product.title}
+                    span  #{product.price}$
+                    if product.quantity > 1
+                        span  x#{product.quantity}
+        span Total: #{total}$
+    else
+        span cart is empty
