@@ -27,7 +27,7 @@ p {
 
 a {
     display: inline-block;
-    color: #e9b189;
+    color: #e2a478;
 }
 
 li:not(:last-child) {
@@ -109,24 +109,25 @@ input[type=number]::-webkit-outer-spin-button {
 
 .base-header {
     font-family: 'Oswald', Arial, Helvetica, sans-serif;
-    padding: .6rem 2rem;
+    padding: 0 2rem;
     background: #84a0c6;
-    border-bottom: 3px solid #e9b189;
 }
 
 .header-link {
     font-size: 1.4rem;
+    padding: .6rem 0;
     color: #161821;
     text-decoration: none;
 }
 
 .header-link._active {
-    color: #e9b189;
+    color: #e2a478;
+    border-bottom: 3px solid #e2a478;
 }
 
 .header-link:hover,
 .header-link:focus {
-    color: #e98989 ;
+    color: #e27878 ;
 }
 
 .content-wrapper {
