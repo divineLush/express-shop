@@ -81,12 +81,15 @@ input[type=number]::-webkit-outer-spin-button {
     margin-right: 1rem;
 }
 
-.d-ib {
+.inlineblock {
     display: inline-block;
 }
 
-.base-header {
+.flex {
     display: flex;
+}
+
+.base-header {
     padding: .6rem 2rem;
     background: #84a0c6;
     border-bottom: 3px solid #e9b189;
@@ -109,4 +112,9 @@ input[type=number]::-webkit-outer-spin-button {
 .header-link:hover,
 .header-link:focus {
     color: #e98989 ;
+}
+
+.content-wrapper {
+    max-width: 1440px;
+    margin: 0 auto;
 }

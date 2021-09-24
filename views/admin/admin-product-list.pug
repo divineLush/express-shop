@@ -10,6 +10,6 @@ block content
                     span  #{product.price}$
                     p #{product.desc}
                     form(action=`/admin/delete-product/${product.id}` method="POST")
-                        button.d-ib.mr-1(type="submit") delete
+                        button.inlineblock.mr-1(type="submit") delete
     else
         h1 no products
