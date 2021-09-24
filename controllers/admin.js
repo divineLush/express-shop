@@ -25,3 +25,7 @@ exports.getProductList = (req, res, next) => {
 exports.getEditProduct = (req, res, next) => {
     res.render('admin/edit-product', { title: 'admin edit product' })
 }
+
+exports.deleteProduct = (req, res, next) => {
+    Product.delete(req.params.id, () => { res.redirect('/products') })
+}

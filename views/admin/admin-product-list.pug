@@ -9,7 +9,7 @@ block content
                     span #{product.title}
                     span  #{product.price}$
                     p #{product.desc}
-                    button.d-ib.mr-1 delete
-                    button.d-ib edit
+                    form(action=`/admin/delete-product/${product.id}` method="POST")
+                        button.d-ib.mr-1(type="submit") delete
     else
         h1 no products

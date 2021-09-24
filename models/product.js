@@ -35,6 +35,26 @@ class Product {
             cb(products.find(el => el.id === id))
         })
     }
+
+    static delete(id, cb) {
+        Product.fetchAll((products) => {
+            const filteredProducts = products.filter(el => el.id !== id)
+
+            if (filteredProducts.length === products.length) {
+                cb()
+                return
+            }
+
+            fs.writeFile(productsPath, JSON.stringify(filteredProducts), (err) => {
+                if (err) {
+                    console.log(err)
+                    return
+                }
+
+                cb()
+            })
+        })
+    }
 }
 
 module.exports = Product
