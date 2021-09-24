@@ -9,7 +9,7 @@ body {
 
 header {
     background: #84a0c6;
-    border-bottom: 5px dotted #e98989;
+    border-bottom: 3px solid #e98989;
 }
 
 p {
@@ -96,6 +96,11 @@ input[type=number]::-webkit-outer-spin-button {
 
 .header-link {
     color: #161821;
+    text-decoration: none;
+}
+
+.header-link._active {
+    color: #e98989;
 }
 
 .header-link:hover,

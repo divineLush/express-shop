@@ -8,11 +8,11 @@ html(lang="en")
     body
         header.p-1-2
             nav
-                a.header-link(href="/") home
-                a.header-link(href="/products") shop
-                a.header-link(href="/cart") cart
-                a.header-link(href="/orders") orders
-                a.header-link(href="/admin/add-product") add product
-                a.header-link(href="/admin/products") admin products
+                a.header-link(href="/" class=`${title === 'home' ? '_active' : ''}`) home
+                a.header-link(href="/products" class=`${title === 'shop' ? '_active' : ''}`) shop
+                a.header-link(href="/cart" class=`${title === 'cart' ? '_active' : ''}`) cart
+                a.header-link(href="/orders" class=`${title === 'orders' ? '_active' : ''}`) orders
+                a.header-link(href="/admin/add-product" class=`${title === 'add product' ? '_active' : ''}`) add product
+                a.header-link(href="/admin/products" class=`${title === 'admin product list' ? '_active' : ''}`) admin products
         main.p-1-2
             block content
