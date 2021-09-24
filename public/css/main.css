@@ -7,11 +7,6 @@ body {
     color: #c6c8d1;
 }
 
-header {
-    background: #84a0c6;
-    border-bottom: 3px solid #e98989;
-}
-
 p {
     margin: .7rem 0;
 }
@@ -19,10 +14,6 @@ p {
 a {
     display: inline-block;
     color: #e9b189;
-}
-
-nav a:not(:last-child) {
-    padding-right: 3rem;
 }
 
 li:not(:last-child) {
@@ -94,16 +85,28 @@ input[type=number]::-webkit-outer-spin-button {
     display: inline-block;
 }
 
+.base-header {
+    display: flex;
+    padding: .6rem 2rem;
+    background: #84a0c6;
+    border-bottom: 3px solid #e9b189;
+}
+
 .header-link {
+    font-size: 1.6rem;
     color: #161821;
     text-decoration: none;
 }
 
+.header-link:not(:last-child) {
+    padding-right: 3rem;
+}
+
 .header-link._active {
-    color: #e98989;
+    color: #e9b189;
 }
 
 .header-link:hover,
 .header-link:focus {
-    color: #e98989;
+    color: #e98989 ;
 }
